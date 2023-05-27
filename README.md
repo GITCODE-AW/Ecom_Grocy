@@ -32,7 +32,7 @@ How To Run
 Products Page
 ![Screenshot 2023-05-27 231853](https://github.com/GITCODE-AW/Ecom_Grocy/assets/99113986/cc33be88-34f6-4cec-8186-1b77a83a823d)
 <!-- -------------------------------------------------------------------------------------------------------------------------------------- -->
-Products Page Mobile View
+Products Page Mobile View                                                                            .
 ![Screenshot 2023-05-27 231911](https://github.com/GITCODE-AW/Ecom_Grocy/assets/99113986/c42f6b4e-979c-43ed-9c1a-892bad4c6c06)
 <!-- -------------------------------------------------------------------------------------------------------------------------------------- -->
 Cart View
@@ -47,5 +47,5 @@ User Panel
 Seller Panel
 ![Screenshot 2023-05-27 232202](https://github.com/GITCODE-AW/Ecom_Grocy/assets/99113986/412d1c4d-c7c9-4e49-b994-b371fc751d92)
 <!-- -------------------------------------------------------------------------------------------------------------------------------------- -->
-Search Bar
+Search Bar                                                                                              .
 ![Screenshot 2023-05-27 232221](https://github.com/GITCODE-AW/Ecom_Grocy/assets/99113986/61c5ce67-30a9-472e-918b-5d643d549e63)
