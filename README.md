@@ -18,3 +18,11 @@ incomplete features
 
 Header design is referred from CyberWarrior Channel. But it is totally recreated. Not Copied.
 Note - Every Component of this project is manually written not copied from anywhere.
+
+
+
+# How To Run
+1. open terminal in downloaded/cloned folder and type,
+2. ' pip install -r requirements.txt ' to install all dependancies
+3. ' venv/scripts/activate ' 
+4. ' python manage.py runserver ' .
