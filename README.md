@@ -15,3 +15,6 @@ incomplete features
   1. Order Section
   2. Seller Panel
   3. etc. 
+
+Header design is referred from CyberWarrior Channel. But it is totally recreated. Not Copied.
+Note - Every Component of this project is manually written not copied from anywhere.
