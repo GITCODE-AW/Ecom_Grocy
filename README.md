@@ -9,4 +9,4 @@ Some Features
   6. Responsive Design
   7. New Product by seller
 
-Please feel free to Update, Add, Modify existing code. that would by great.
+Please feel free to Update, Add, Modify existing code. that would be great.
