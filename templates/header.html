@@ -1,0 +1,30 @@
+    <a class="logo" href="#home">
+        <i class="ri-shopping-basket-2-fill"></i><span>Grocy</span>
+    </a>
+
+    <nav>
+        <ul>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="{% url 'product_home' %}">Products</a></li>
+            <li><a href="#Blog">Blog</a></li>
+            <li><a href="#About-Us">About-Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="options">
+        <a href="#"><i class="ri-search-2-line" id="header_search"></i></a>
+        <a href="#" id="header_menu"><i class="ri-menu-5-line" id="header_menu_i"></i></a>
+        <a href="{% url 'cartapp_cart' %}"><i class="ri-shopping-cart-2-line"></i></a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'userapp_account' %}"><i class="ri-user-line"></i></a>
+        {% else %}
+        <a href="{% url 'userapp_login' %}"><i class="ri-user-add-line"></i></a>
+        {% endif %}
+    </div>
+
+    <section class="searchbar">
+        <form action="{% url 'product_home' %}" method>
+            <input name="searched_product" type="search" placeholder="Search Product Here..">
+            <button type="submit"><i class="ri-search-2-line"></i></button>
+        </form>
+    </section>

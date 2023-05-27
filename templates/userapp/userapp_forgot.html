@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+<!-- ================ seperation ================ -->
+
+{% block css %} {% load static %}
+<link rel="stylesheet" href="{% static 'userapp/login_register.css' %}">
+{% endblock %}
+
+<!-- ================ seperation ================ -->
+
+{% block main %}
+<!-- registration form -->
+<div class="form">
+    <form action="" method="post" class="user_registration">
+        {% csrf_token %}
+        <div class="form_group heading">Forgot Password</div>
+
+        <div class="form_group">
+            <label for="email">
+                <i class="ri-mail-fill"></i>
+                <input name="email" class="input" type="email" id="email" placeholder="Enter Email"
+                    required>
+            </label>
+            <hr>
+        </div>
+
+        <div class="form_group btn">
+            <button type="submit" class="submit">Send Email</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

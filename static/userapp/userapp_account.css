@@ -1,0 +1,79 @@
+.btn:hover{
+    text-decoration: underline 1.5px solid rgb(184, 184, 184);
+    border-radius: 0.2rem;
+}
+
+.account section{
+    background: white;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    min-width: 60%;
+}
+
+.account form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#user_creds{
+    font-size: 1rem;
+    text-decoration: underline 1px rgb(143, 143, 143);
+}
+
+.input{
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    border-bottom: 1px solid dimgray;
+    padding: 0.3rem 0.7rem;
+}
+
+.account .section{
+    display: flex;
+    flex-direction: column;
+}
+
+.account section label{
+    color: rgb(78, 78, 78);
+}
+
+
+.account section #info_save{
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    background-color: rgb(2, 150, 2);
+    color: white;
+    padding: 0.5rem 0;
+}
+
+.account section #info_save:hover{
+    background-color: rgb(3, 109, 3);
+}
+
+.account .phone input{
+    width: 88%;
+}
+
+.account .phone #phone_validate_signal{
+    color: black;
+}
+
+.account .phone i{
+    font-size: 1.4rem;
+}
+
+.account .section a:hover{
+    text-decoration: underline 1.8px solid rgba(70, 70, 70, 0.741);
+}
+/* media screen code */
+@media (max-width:500px) {
+    .account section{
+        min-width: 90%;
+    }
+}

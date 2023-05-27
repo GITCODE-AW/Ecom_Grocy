@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block css %} {% load static %}
+<link rel="stylesheet" href="{% static 'userapp/login_register.css' %}">
+{% endblock %}
+
+{% block main %}
+<!-- login form  start-->
+<div class="form">
+    <form action="" method="post" class="user_login">
+        {% csrf_token %}
+        <div class="form_group heading">Login Here</div>
+
+        <div class="form_group">
+            <label for="email">
+                <i class="ri-mail-fill"></i>
+                <!-- email input field -->
+                <input name="email" class="input" type="email" id="email" placeholder="Enter Email" required>
+            </label>
+            <hr>
+        </div>
+
+        <div class="form_group">
+            <label for="password">
+                <i class="ri-lock-password-fill lock"></i>
+                <!-- password input field -->
+                <input name="password" type="password" class="input" type="password" id="password" placeholder="Enter Password"
+                    required>
+                <i class="ri-eye-fill eye eyeon"></i>
+                <i class="ri-eye-off-fill eye eyeoff active"></i>
+            </label>
+            <hr>
+        </div>
+
+        <div class="form_group btn">
+            <button type="submit" class="submit">Login</button>
+        </div>
+        <div class="login-register">
+            <small>don't have account, <a href="{% url 'userapp_register' %}">Create Account</a></small>
+            <small>forgot password, <a href="{% url 'userapp_forgot_password' %}">Reset Password</a></small>
+        </div>
+    </form>
+</div>
+<!-- login form end -->
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'userapp/login_register.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'productapp/product_home.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="products">
+    {% for product in products %}
+    <div class="product">
+        <a href="{% url 'product_specific' product.id %}" class="product_a">
+            <img src="{{product.image.url}}" alt="">
+            <section class="product-text">
+                <span class="product-name">{{product.product_name}}</span>
+                <span class="product-price-quantity">Rs {{product.price}}/{{product.quantity}}</span>
+            </section>
+        </a>
+        <div>
+            <i class="ri-add-line add"></i>
+            <form method="get">
+                <button name="product_id" class="add-to-cart" value="{{product.id}}">
+                    add to cart
+                </button>
+            </form>
+            <i class="ri-subtract-line subtract"></i>
+            <i class="ri-close-line remove"></i>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'productapp/product_home.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block css %} {% load static %}
+<link rel="stylesheet" href="{% static 'userapp/login_register.css' %}">
+{% endblock %}
+
+{% block main %}
+<!-- registration form -->
+<div class="form">
+    <form action="" method="post" class="user_registration" onsubmit="return validate_form()">
+        {% csrf_token %}
+        <div class="form_group heading">Register Here</div>
+
+        <div class="form_group">
+            <label for="email">
+                <i class="ri-mail-fill"></i>
+                <!-- email input -->
+                <input name="email" class="input" type="email" id="email" placeholder="Enter Email"
+                    required>
+            </label>
+            <hr>
+        </div>
+
+        <div class="form_group">
+            <label for="password">
+                <i class="ri-lock-password-fill lock"></i>
+                <!-- password input -->
+                <input name="password" type="password" class="input" type="password" id="password"
+                    placeholder="Enter Password" onkeyup="password_status()" required>
+                <i class="ri-eye-fill eye eyeon"></i>
+                <i class="ri-eye-off-fill eye eyeoff active"></i>
+            </label>
+            <hr>
+            <div class="message">
+                <small class="error_message length">7 character long <i class="ri-donut-chart-fill"></i></small>
+                <small class="error_message case">UPPERCASE and lowercase <i class="ri-donut-chart-fill"></i></small>
+                <small class="error_message number">number <i class="ri-donut-chart-fill"></i></small>
+            </div>
+        </div>
+
+        <div class="form_group btn">
+            <button type="submit" class="submit">Register</button>
+        </div>
+
+        <div class="login-register">
+            <small>already have account, <a href="{% url 'userapp_login' %}">Login Account</a></small>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'userapp/login_register.js' %}"></script>
+{% endblock %}

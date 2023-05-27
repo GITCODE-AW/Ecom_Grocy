@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block css %} {% load static %}
+<link rel="stylesheet" href="{% static 'userapp/userapp_account.css' %}">
+{% endblock %}
+
+{% block main %}
+{% if user.is_authenticated %}
+    <div class="account">
+        <section class="section">Hello, {{user.username}}</section>
+        <section class="section"><a href="{% url 'sellerapp_products' %}">Your Products</a></section>
+        <section class="section"><a href="#">Your Information</a></section>
+        <section class="section"><a href="#">Product Analytics</a></section>
+        <section class="section"><a href="#">Orders</a></section>
+    </div>
+{% else %}
+<div class="account">
+    <section>hello. please login to continue seller registration</section>
+</div>
+{% endif %}
+{% endblock %}

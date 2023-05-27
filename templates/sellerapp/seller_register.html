@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block css %} {% load static %}
+<link rel="stylesheet" href="{% static 'sellerapp/seller_register.css' %}">
+<link rel="stylesheet" href="{% static 'userapp/userapp_account.css' %}">
+{% endblock %}
+
+{% block main %}
+{% if user.is_authenticated %}
+<div class="account">
+    <form action="" method="post" onsubmit="">
+        {% csrf_token %}
+        <section class="section welcome_user">
+            Welcome, <strong id="user_creds">{{user.username}}</strong>
+            We want some additional information about your business,,
+        </section>
+
+        <!--  -->
+        <section class="section state">
+            <label for="bio">Bio</label>
+            <textarea name="bio" type="text" class="input" id="bio" value=""
+            placeholder="bio here, 200 characters only..." required maxlength="200" rows="3"></textarea>
+        </section>
+
+        <section class="section business-name">
+            <label for="business-name">Business Name</label>
+            <input name="business-name" type="text" class="input" required id="business-name", value="", placeholder="business name here">
+        </section>
+
+        <section class="section business-email">
+            <label for="business-email">Business Email</label>
+            <input name="business-email" type="email" class="input" required id="business-email" value="" placeholder="business email here">
+        </section>
+
+        <section class="section payment-preference">
+            <label for="payment-preference">Payment Preference</label>
+            <select name="payment-preference" id="payment-preference" class="input select" aria-placeholder="Payment Preference here.." required>
+                <option class="options" value="online">Cash</option>
+                <option class="options" value="offline">Digital/Online</option>
+                <option class="options" value="all">Both Cash and Digital/Online</option>
+            </select>
+        </section>
+
+        <section class="section submit">
+            <button type="submit" id="info_save">Save</button>
+        </section>
+    </form>
+{% else %}
+<div class="account">
+    <section class="section">
+        <a href="{% url 'userapp_login' %}">hello. login or create account to continue seller registration click here to login</a>
+    </section>
+</div>
+{% endif %}
+{% endblock %}
+
+    {% block js %}
+    <script src="{% static 'userapp/login_register.js' %}"></script>
+    {% endblock %}

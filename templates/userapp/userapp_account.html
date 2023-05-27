@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block css %} {% load static %}
+<link rel="stylesheet" href="{% static 'userapp/userapp_account.css' %}">
+{% endblock %}
+
+{% block main %}
+
+
+
+{% if user.is_authenticated %}
+<div class="account">
+    <form action="" method="post" onsubmit="return Account_validation()">
+        {% csrf_token %}
+        <section class="section welcome_user">
+            Welcome <strong id="user_creds">{{user.username}}</strong>
+        </section>
+
+        <section class="section state">
+            <label for="state_s">State</label>
+            <input name="state" type="text" class="input" id="state_s" value="{{Account.state}}"
+                placeholder="state here...">
+        </section>
+
+        <section class="section city">
+            <label for="city_s">City</label>
+            <input name="city" type="text" class="input" id="city_s" value="{{Account.city}}"
+                placeholder="city here...">
+        </section>
+
+        <section class="section address">
+            <label for="address_s">Address</label>
+            <textarea name="address" type="text" class="input" rows="4" col id="address_s"
+                placeholder="address here...">{{Account.address}}</textarea>
+        </section>
+
+        <section class="section phone">
+            <label for="phone_s">Phone</label>
+            <div>
+                <input name="phone" type="number" class="input" onkeyup="phone_validation()" id="phone_s"
+                    value="{{Account.phone}}" placeholder="phone number here...">
+                <i class="ri-quill-pen-fill" id="phone_validate_signal"></i>
+            </div>
+        </section>
+
+        <section class="section submit">
+            <button type="submit" id="info_save">Save</button>
+        </section>
+
+        <section class="section">
+            <a href="{% url 'userapp_logout' %}" class="btn">Logout here</a>
+            {% if is_seller %}
+                <a href="{% url 'sellerapp_panel' %}" class="btn">Go To Seller Panel</a>
+            {% else %}
+                <a href="{% url 'sellerapp_register' %}" class="btn">Register as Seller</a>
+            {% endif %}
+        </section>
+    </form>
+</div>
+{% else %}
+<div class="account">
+    <section class="section" style="text-align: center;">
+        Please Login To Access Your Account
+    </section>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'userapp/userapp_account.js' %}"></script>
+{% endblock %}

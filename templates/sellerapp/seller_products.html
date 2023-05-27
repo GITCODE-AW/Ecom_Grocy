@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block css %} {% load static %}
+<link rel="stylesheet" href="{% static 'productapp/product_home.css' %}">
+{% endblock %}
+
+{% block main %}
+{% if user.is_authenticated %}
+<div class="products">
+    {% for product in products %}
+    <a href="{% url 'product_specific' product.id %}" class="product_a">
+        <div class="product">
+            <img src="{{product.image.url}}" alt="">
+            <section class="product-text">
+                <span class="product-name">{{product.product_name}}</span>
+                <span class="product-price-quantity">Rs {{product.price}}/{{product.quantity}}</span>
+            </section>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+<div class="account">
+    <section>hello, please login to continue seller registration</section>
+</div>
+{% endif %}
+{% endblock %}

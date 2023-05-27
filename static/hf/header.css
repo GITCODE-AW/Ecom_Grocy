@@ -1,0 +1,210 @@
+/* root elements */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+    --text-color: rgb(22, 22, 23);
+    --main-color: green;
+    --background-color: #efefef;
+    --main-background-color: white;
+    --header-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+/* defaults */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: Poppins, sans-serif;
+    list-style: none;
+    color: var(--text-color);
+}
+
+body{
+    background: var(--background-color);
+}
+
+/* header stylesheet */
+header {
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 8rem;
+    align-items: center;
+    background: var(--main-background-color);
+    box-shadow: var(--header-box-shadow);
+}
+
+/* messages css */
+.server_messages{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: black;
+    text-align: center;
+    padding: 1rem 0;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0;
+    padding: 1rem;
+}
+
+/* dont show class */
+.dont-show{
+    display: none;
+}
+
+/* first section : logo */
+
+header .logo {
+    text-align: center;
+    font-size: 2rem;
+}
+
+header .logo i {
+    color: var(--main-color);
+}
+
+header .logo span{
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+/* second section : nav */
+header nav ul {
+    display: flex;
+}
+
+header nav ul li{
+    margin: 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+header nav ul a:hover{
+    color: rgb(0, 123, 0);
+    text-decoration: underline rgb(129, 164, 129) 2px;
+}
+
+/* third section : options */
+header .options{
+    font-size: 1.1rem;
+}
+
+header #header_menu{
+    display: none;
+}
+
+header .options i, span{
+    margin: 0 0.2rem;
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+    font-size: 1.3rem;
+}
+
+header .options i:hover{
+    background: green;
+    color: white;
+}
+
+header .options span:hover{
+    color: var(--main-color);
+    text-decoration: underline 2px rgb(129, 164, 129);
+}
+
+/* fourth section : searchbar */
+header .searchbar{
+    transition: ease-in-out 0.4s;
+    position: fixed;
+    top: 5.5rem;
+    right: -110%;
+    background: white;
+    box-shadow: var(--header-box-shadow);
+    width: 25%;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+}
+
+header .searchbar input, button{
+    outline: none;
+    background: none;
+    border: none;
+}
+
+header .searchbar input{
+    width: 90%;
+}
+
+header .searchbar.active{
+    transition: ease-in-out 0.4s;
+    right: 0.5rem;
+}
+
+/* ---------------------- Media Screen ---------------------- */
+@media (max-width:840px) {
+    header{
+        padding: 1rem 4rem;
+    }
+
+    header #header_menu{
+        display: inline;
+    }
+
+    header #header_menu.active i{
+        background: green;
+        color: white;
+    }
+
+    header nav{
+        transition: ease-in-out 0.4s;
+        position: fixed;
+        right: -110%;
+        top: 5.5rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background-color: white;
+        box-shadow: var(--header-box-shadow);
+    }
+
+    header nav.active{
+        transition: ease-in-out 0.4s;
+        display: block;
+        position: fixed;
+        right: 0.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header .searchbar{
+        width: 40%;
+    }
+}
+
+@media (max-width:470px){
+    header{
+        padding: 0.4rem;
+    }
+
+    header .options i,span{
+        font-size: 1.1rem;
+    }
+
+    header .logo span{
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    header nav{
+        padding: 0.3rem;
+        top: 4.3rem;
+    }
+
+    header nav a{
+        font-size: 0.9rem;
+    }
+
+    header .searchbar{
+        width: 70%;
+        top: 4.2rem;
+    }
+}

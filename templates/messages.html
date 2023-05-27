@@ -1,0 +1,21 @@
+{% if messages %}
+<div class="server_messages">
+    {% for message in messages %}
+    {% if message.tags == 'error' %}
+    <div class="server_message" style="color: rgba(206, 0, 0, 0.777);">
+        {{message}}
+    </div>
+
+    {% elif message.tags == 'info' %}
+    <div class="server_message" style="color: rgba(0, 0, 0, 0.777);">
+        {{message}}
+    </div>
+
+    {% else %}
+    <div class="server_message" style="color: rgb(0, 158, 0);">
+        {{message}}
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endif %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'productapp/product_specific.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="product">
+    <div class="text">
+        <span class="brand-name">By {{product.brand_name}} , The {{product.product_name}}</span>
+        <span class="price-quantity">Rs {{product.price}} / {{product.quantity}}</span>
+        <span class="addtocart">Add to Cart</span>
+        <hr>
+        <p class="description">{{product.description}}</p>
+    </div>
+    <hr>
+    <img class="image" src="{{product.image.url}}" alt="">
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'productapp/product_home.js' %}"></script>
+{% endblock %}

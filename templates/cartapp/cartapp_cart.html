@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+<!-- css block -->
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'cartapp/cart.css' %}">
+{% endblock %}
+
+<!-- main block  -->
+{% block main %}
+{% if user.is_authenticated %}
+
+<div class="cart">
+    {% for cart_item in cart_items %}
+    <div class="cartitem">
+        <section class="img">
+            <img src="{{cart_item.product.image.url}}" alt="product image">
+        </section>
+        <section class="details">
+            <div class="name">{{cart_item.product.product_name}}</div>
+            <div class="price-qty">{{cart_item.product.price}} / {{cart_item.product.quantity}}</div>
+            <div class="price">{{cart_item.product.price}} RS</div>
+            <form action="" method="get" class="actions">
+
+                <button type="submit" name="add_one" value="+1" class="btn add"><i class="ri-add-fill"></i></button>
+                <span>{{cart_item.quantity}}</span>
+                <button type="submit" name="subtract_one" value="-1" class="btn subtract"><i
+                        class="ri-subtract-fill"></i></button>
+                <button type="submit" name="remove_one" value="delete" class="btn delete"><i
+                        class="ri-delete-bin-5-line"></i></button>
+                <input name="product_id" type="text" value="{{cart_item.id}}" class="dont-show">
+            </form>
+        </section>
+    </div>
+
+    {% empty %}
+    <div class="empty">
+        Empty Cart. Please Add Items To Cart
+    </div>
+
+    {% endfor %}
+
+    <div class="bill_total">
+        Total =
+    </div>
+
+    
+    <form action="{% url 'cartapp_order' %}" method="get">
+        <button name="place_order" value="True" class="place_order">
+            Place Order For All Items
+        </button>
+    </form>
+
+</div>
+
+{% else %}
+please login in order to access cart
+{% endif %}
+{% endblock %}
