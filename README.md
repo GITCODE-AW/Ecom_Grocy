@@ -1,6 +1,6 @@
 Hello there. I made this project for my learning purpose. i made some mistakes but this project works.
 
-Some Features
+Completed Features
   1. Cart
   2. Seller Panel
   3. User Login and logout
@@ -10,3 +10,8 @@ Some Features
   7. New Product by seller
 
 Please feel free to Update, Add, Modify existing code. that would be great.
+
+incomplete features
+  1. Order Section
+  2. Seller Panel
+  3. etc. 
